@@ -1685,7 +1685,7 @@ public class RSInterface {
 		addText(58062, "350", tda, 0, 0xE68A00, true, true);
 		
 		addInputField(58063, 50, 0xE68A00, "Search", 235, 23, false, true);
-		addText(58064, "Bank Of OS-Veldahar", tda, 1, 0xE68A00, true, true);
+		addText(58064, "Bank Of Tyras", tda, 1, 0xE68A00, true, true);
 		RSInterface Interface = interfaceCache[5385];
 		Interface.height = 202;
 		Interface.width = 481;
@@ -2106,7 +2106,7 @@ public class RSInterface {
 			}
 			setBounds(45253, 8, 6, 0, Interface);
 			setBounds(45254, 8, 21, 1, Interface);
-			addText(45253, "OS-V Staff Control", TDA, 0, 65280);
+			addText(45253, "Tyras Staff Control", TDA, 0, 65280);
 			addText(45254, "Players", TDA, 1, 0xFF981F);
 		} catch (Exception e) {
 			e.printStackTrace();

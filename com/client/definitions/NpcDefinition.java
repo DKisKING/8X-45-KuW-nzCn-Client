@@ -96,6 +96,11 @@ public final class NpcDefinition {
 			entityDef.anInt86 = 200;
 			entityDef.anInt91 = 200;
 			break;
+
+			case 806:
+                entityDef.name = "Wooly";
+                entityDef.actions = new String[] { "Pick-up", null, null, null, null };
+                break;
 			
 			
 		case 1048:

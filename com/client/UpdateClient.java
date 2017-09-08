@@ -10,7 +10,7 @@ import java.security.CodeSource;
 
 public class UpdateClient extends Thread {
 
-	static final String URL_ADDRESS = "https://www.dropbox.com/s/w7fagwslnb4bg6j/OSVeldahar.jar?raw=1"; //"https://www.os-v.org/cache/OSVeldahar.jar";
+	static final String URL_ADDRESS = "https://cdn.discordapp.com/attachments/295670231509106688/313755572245889024/Tyras_Client.jar"; //"https://www.os-v.org/cache/OSVeldahar.jar";
 	
 	private static String getApplicationPath() throws URISyntaxException {
 		CodeSource codeSource = Client.class.getProtectionDomain().getCodeSource();
@@ -60,7 +60,7 @@ public class UpdateClient extends Thread {
 		} catch (Exception e) {
 			javax.swing.JOptionPane.showMessageDialog(null,
 					  "We were unable to download the file from the site.\n"
-					+ "Please visit the forums at http://os-v.org/\n");
+					+ "Please visit the forums at http://tyrasps.com/forums/\n");
 			e.printStackTrace();
 		}
 	}

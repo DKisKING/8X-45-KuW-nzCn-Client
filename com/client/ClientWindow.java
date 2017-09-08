@@ -18,7 +18,7 @@ public class ClientWindow extends Client implements ActionListener, WindowListen
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 			JPopupMenu.setDefaultLightWeightPopupEnabled(false);
-			frame = new JFrame("Dbz is a big noob ;)");
+			frame = new JFrame("Tyras - The Place To Be");
 			frame.setLayout(new BorderLayout());
 			setFocusTraversalKeysEnabled(false);
 			frame.setResizable(true);

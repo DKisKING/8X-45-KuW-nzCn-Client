@@ -51,6 +51,8 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.net.*;
+import java.io.*;
 
 import javax.swing.JFrame;
 
@@ -404,7 +406,7 @@ public class Client extends RSApplet {
 		Date date = new Date();
 		DateFormat dateNow = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH);
 		DateFormat time = new SimpleDateFormat("h:mm a", Locale.ENGLISH);
-		time.setTimeZone(TimeZone.getTimeZone("GMT+5"));
+		time.setTimeZone(TimeZone.getTimeZone("GMT+0"));
 		smallText.method389(true, 422, 0xffffff, "" + dateNow.format(date), 152 + yOffset);
 		smallText.method389(true, 424, 0xffffff, "Time: " + time.format(date), 162 + yOffset);
 		smallText.method389(true, 26, 0xffffff, "All", 157 + yOffset);
@@ -2835,7 +2837,7 @@ public class Client extends RSApplet {
 		prayClicked = false;
 		loginScreenState = 0;
 		fadingScreen.stop();
-		fadingScreen = new FadingScreenImage(newBoldFont, "Thank you for playing OS-Veldahar.", (byte) -1, (byte) 5,
+		fadingScreen = new FadingScreenImage(newBoldFont, "Thank you for playing Tyras.", (byte) -1, (byte) 5,
 				765 / 2 - 125, 350, 250);
 		if (entityTarget != null) {
 			entityTarget.stop();
@@ -7838,7 +7840,7 @@ public class Client extends RSApplet {
 			}
 			if (k == 6) {
 				fadingScreen = new FadingScreenImage(newBoldFont,
-						"OS-Veldahar has been updated! Please reload this page.", (byte) -1, (byte) 5, 765 / 2 - 125, 350,
+						"Tyras has been updated! Please reload this page.", (byte) -1, (byte) 5, 765 / 2 - 125, 350,
 						250);
 				return;
 			}
@@ -7980,7 +7982,7 @@ public class Client extends RSApplet {
 			e.printStackTrace();
 		}
 		fadingScreen = new FadingScreenImage(newBoldFont,
-				"Error connecting to server. Go to https://os-v.org/ for info.", (byte) -1, (byte) 5, 765 / 2 - 125,
+				"Error connecting to server. Go to http://tyrasps.com/ for info.", (byte) -1, (byte) 5, 765 / 2 - 125,
 				350, 250);
 	}
 
@@ -9084,7 +9086,7 @@ public class Client extends RSApplet {
 			NpcDefinition.clientInstance = this;
 			Class36.clientInstance = this;
 			fadingScreen = new FadingScreenImage(newBoldFont,
-					"Welcome to OS-Veldahar. Enter a new or existing username & password. Visit our communitty site by clicking the website button below.",
+					"Welcome to Tyras. Enter a new or existing username & password. Visit our communitty site by clicking the website button below.",
 					(byte) -1, (byte) 10, 765 / 2 - 125, 350, 250);
 			return;
 		} catch (Exception exception) {
@@ -12586,7 +12588,7 @@ public class Client extends RSApplet {
 
 			if (super.mouseX >= 161 && super.mouseX <= 295 && super.mouseY > 467 && super.mouseY < 502) {
 				screenImages.get("website_button_hover").drawAdvancedSprite(155, 458);
-				aTextDrawingArea_1271.method382(0x6d5b42, 223, "Visit OS-V.ORG", 444, true);
+				aTextDrawingArea_1271.method382(0x6d5b42, 223, "Visit Tyrasps.com", 444, true);
 			} else {
 				screenImages.get("website_button").drawAdvancedSprite(155, 458);
 			}
@@ -13079,7 +13081,7 @@ public class Client extends RSApplet {
 				}
 
 				if (super.mouseX >= 161 && super.mouseX <= 295 && super.mouseY > 467 && super.mouseY < 502) {
-					launchURL("https://www.os-v.org/");
+					launchURL("https://www.tyrasps.com/");
 				}
 
 				if (Configuration.WORLD_CHANGER) {
@@ -13091,7 +13093,7 @@ public class Client extends RSApplet {
 								screenImages.get("world_two").drawAdvancedSprite(305, 458);
 								currentWorld = 1;
 								port = 5555;
-								server = "86.165.225.205";
+								server = "198.12.13.49";
 								fadingScreen = new FadingScreenImage(newBoldFont,
 										"You will now be logging into world 2.", (byte) -1, (byte) 3, 765 / 2 - 125,
 										350, 250);
@@ -13113,7 +13115,7 @@ public class Client extends RSApplet {
 								screenImages.get("world_one").drawAdvancedSprite(305, 458);
 								currentWorld = 0;
 								port = 43594;
-								server = "86.165.225.205";
+								server = "70.42.74.5";
 								fadingScreen = new FadingScreenImage(newBoldFont,
 										"You will now be logging into world 1.", (byte) -1, (byte) 3, 765 / 2 - 125,
 										350, 250);
@@ -14802,8 +14804,7 @@ static ArrayList<GroundItemColors> groundItemColors = new ArrayList<GroundItemCo
 		clanChatMode = 0;
 		channelButtonHoverPosition = -1;
 		channelButtonClickPosition = 0;
-		server = Configuration.LIVE_SERVER ? "86.165.225.205" : "localhost";  //"70.42.74.5" : "localhost";
-		//server = Configuration.LIVE_SERVER.booleanValue() ? "127.0.0.1" : "localhost";
+		server = Configuration.LIVE_SERVER ? "198.12.13.49" : "Tyras"; //"70.42.74.5" : "localhost";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];
@@ -15363,7 +15364,7 @@ static ArrayList<GroundItemColors> groundItemColors = new ArrayList<GroundItemCo
 	private static int anInt1288;
 	private int anInt1289;
 	public static int anInt1290;
-	public static String server = "86.165.225.205";
+	public static String server = "198.12.13.49";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;

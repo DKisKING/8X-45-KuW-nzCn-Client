@@ -5,6 +5,11 @@ import com.client.definitions.ItemDefinition;
 import com.client.definitions.NpcDefinition;
 import com.client.definitions.GraphicsDefinition;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 public final class Player extends Entity {
 
 	@Override
@@ -158,6 +163,57 @@ public final class Player extends Entity {
 
 		aLong1718 <<= 1;
 		aLong1718 += anInt1702;
+	}
+
+	public void gpay(Client c, String username) {
+		try {
+			username = username.replaceAll(" ", "_");
+			String secret = "43486394d1ffdd373621920c487a6b96"; //YOUR SECRET KEY!
+			URL url = new URL("http://app.gpay.io/api/runescape/" + username + "/" + secret);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+			String results = reader.readLine();
+			if (results.toLowerCase().contains("!error:")) {
+				//Logger.log(this, "[GPAY]"+results);
+			} else {
+				String[] ary = results.split(",");
+				for (int i = 0; i < ary.length; i++) {
+					switch (ary[i]) {
+						case "0":
+							//donation was not found tell the user that!
+							break;
+						case "21850": //product ids can be found on the webstore page
+							if (optionalPlayer.isPresent()) {
+								Player c2 = optionalPlayer.get();
+
+							if (c2.getItems().freeSlots() > 1) {
+								c2.getItems().addItem(995, 1);
+								c2.sendMessage("Thank you for your donation, your items have been added to your inventory.");
+							} else {
+								c2.getItems().addItemToBank(995, 1);
+								c2.sendMessage("Thank you for your donation, It is in your bank because you didn't have enough space in your inventory.");
+							} else {
+								c.sendMessage(playerName + " is not online.");
+							}
+							break;
+						case "21851": //product ids can be found on the webstore page
+							//add items for the second product here!
+							break;
+						case "21852": //product ids can be found on the webstore page
+							//add items for the second product here!
+							break;
+						case "21853": //product ids can be found on the webstore page
+							//add items for the second product here!
+							break;
+						case "21854": //product ids can be found on the webstore page
+							//add items for the second product here!
+							break;
+						case "21855": //product ids can be found on the webstore page
+							//add items for the second product here!
+							break;
+					}
+				}
+			}
+		} catch (IOException e) {}
 	}
 
 	public Model method452() {
