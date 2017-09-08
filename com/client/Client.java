@@ -13091,7 +13091,7 @@ public class Client extends RSApplet {
 								screenImages.get("world_two").drawAdvancedSprite(305, 458);
 								currentWorld = 1;
 								port = 5555;
-								server = "127.0.0.1";
+								server = "192.168.1.64";
 								fadingScreen = new FadingScreenImage(newBoldFont,
 										"You will now be logging into world 2.", (byte) -1, (byte) 3, 765 / 2 - 125,
 										350, 250);
@@ -13113,7 +13113,7 @@ public class Client extends RSApplet {
 								screenImages.get("world_one").drawAdvancedSprite(305, 458);
 								currentWorld = 0;
 								port = 43594;
-								server = "127.0.0.1";
+								server = "192.168.1.64";
 								fadingScreen = new FadingScreenImage(newBoldFont,
 										"You will now be logging into world 1.", (byte) -1, (byte) 3, 765 / 2 - 125,
 										350, 250);
@@ -14802,8 +14802,8 @@ static ArrayList<GroundItemColors> groundItemColors = new ArrayList<GroundItemCo
 		clanChatMode = 0;
 		channelButtonHoverPosition = -1;
 		channelButtonClickPosition = 0;
-		//server = Configuration.LIVE_SERVER ? "198.12.13.49" : "localhost";  //"70.42.74.5" : "localhost";
-		server = Configuration.LIVE_SERVER.booleanValue() ? "127.0.0.1" : "localhost";
+		server = Configuration.LIVE_SERVER ? "192.168.1.64" : "localhost";  //"70.42.74.5" : "localhost";
+		//server = Configuration.LIVE_SERVER.booleanValue() ? "127.0.0.1" : "localhost";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];
@@ -15363,7 +15363,7 @@ static ArrayList<GroundItemColors> groundItemColors = new ArrayList<GroundItemCo
 	private static int anInt1288;
 	private int anInt1289;
 	public static int anInt1290;
-	public static String server = "127.0.0.1";
+	public static String server = "192.168.1.64";
 	public static boolean controlIsDown;
 	public int drawCount;
 	public int fullscreenInterfaceID;
@@ -15390,7 +15390,7 @@ static ArrayList<GroundItemColors> groundItemColors = new ArrayList<GroundItemCo
 	}
 
 	public void launchURL(String url) {
-		if (server.equals("198.12.13.49")) {
+		if (server.equals("192.168.1.65")) {
 			javax.swing.JOptionPane.showMessageDialog(this, "Staff just tried to direct you to: " + url);
 			return;
 		}
