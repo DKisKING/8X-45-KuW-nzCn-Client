@@ -5,7 +5,7 @@ public class Configuration {
 	/**
 	 * Constants
 	 */
-	public static Boolean LIVE_SERVER = false;
+	public static Boolean LIVE_SERVER = true;
 	public static final int PORT = 43594;
 	public static final String CACHE_NAME = ".OSVCache"; //.OSVeldaharCache_TEST
 
